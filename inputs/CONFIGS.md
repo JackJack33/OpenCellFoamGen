@@ -39,9 +39,9 @@ Duocel PPI options:
 
 Approximate mean pore diameter:
 
-\[
+$$
 d \approx \frac{25.4 \text{ mm}}{\text{PPI}}
-\]
+$$
 
 | PPI | Mean Pore Size |
 |-----|----------------|
@@ -56,9 +56,9 @@ d \approx \frac{25.4 \text{ mm}}{\text{PPI}}
 
 Linked via Gibson–Ashby scaling:
 
-\[
-\left(\frac{t}{\ell}\right)^2 \propto \frac{\rho^*}{\rho_s}
-\]
+$$
+    \left(\frac{t}{\ell}\right)^2 \propto \frac{\rho^*}{\rho_s}
+$$
 
 Combined with experimental aluminum foam studies:
 
