@@ -1,36 +1,31 @@
-general:
-  fname: foamgen_low_density_10ppi
+filename: foamgen_low_density_10ppi
 
-packing:
-  active: true
-  domain: 0.10
-  number_of_cells: 350
+pack:
+    active: yes
+    ncells: 350
+    shape: 0.10
+    scale: 0.035
+    alg: fba
+    render: no
+    clean: yes
+    maxit: 5
 
-tessellation:
-  active: true
-  rve_size: 0.10
+tess:
+    active: yes
+    render: no
+    clean: yes
 
-structured_mesh:
-  active: true
-  porosity: 0.96
-  strut_content: 0.20
-  nx: 300
-  ny: 300
-  nz: 150
+morph:
+    active: yes
+    dwall: 0.0002     # 0.20 mm
 
-material:
-  name: aluminum_foam_10ppi
-  solid_density: 2700
-  relative_density: 0.04
-  pore_size_mm: 2.54
-  strut_thickness_mm: 0.20
-  foam_density: 108
+umesh:
+    active: no
 
-geometry:
-  width: 0.10
-  height: 0.10
-  core_thickness: 0.015
-
-output:
-  format: vtk
-  filename: foamgen_low_density_10ppi.vtk
+smesh:
+    active: yes
+    strut: 0.20
+    por: 0.96         # 96% porosity
+    isstrut: 4
+    binarize: yes
+    perbox: yes

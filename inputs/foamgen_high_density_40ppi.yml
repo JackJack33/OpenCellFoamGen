@@ -1,36 +1,31 @@
-general:
-  fname: foamgen_high_density_40ppi
+filename: foamgen_high_density_40ppi
 
-packing:
-  active: true
-  domain: 0.10
-  number_of_cells: 950
+pack:
+    active: yes
+    ncells: 950
+    shape: 0.10
+    scale: 0.012
+    alg: fba
+    render: no
+    clean: yes
+    maxit: 5
 
-tessellation:
-  active: true
-  rve_size: 0.10
+tess:
+    active: yes
+    render: no
+    clean: yes
 
-structured_mesh:
-  active: true
-  porosity: 0.88
-  strut_content: 0.40
-  nx: 500
-  ny: 500
-  nz: 150
+morph:
+    active: yes
+    dwall: 0.00025    # 0.25 mm
 
-material:
-  name: aluminum_foam_40ppi
-  solid_density: 2700
-  relative_density: 0.12
-  pore_size_mm: 0.64
-  strut_thickness_mm: 0.25
-  foam_density: 324
+umesh:
+    active: no
 
-geometry:
-  width: 0.10
-  height: 0.10
-  core_thickness: 0.015
-
-output:
-  format: vtk
-  filename: foamgen_high_density_40ppi.vtk
+smesh:
+    active: yes
+    strut: 0.40
+    por: 0.88         # 88% porosity
+    isstrut: 4
+    binarize: yes
+    perbox: yes
