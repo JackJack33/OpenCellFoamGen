@@ -1,0 +1,31 @@
+filename: foamgen_standard_20ppi
+
+pack:
+    active: yes
+    ncells: 600
+    shape: 0.10
+    scale: 0.020
+    alg: fba
+    render: no
+    clean: yes
+    maxit: 5
+
+tess:
+    active: yes
+    render: no
+    clean: yes
+
+morph:
+    active: yes
+    dwall: 0.0004     # 0.40 mm
+
+umesh:
+    active: no
+
+smesh:
+    active: yes
+    strut: 0.30
+    por: 0.92         # 92% porosity
+    isstrut: 4
+    binarize: yes
+    perbox: yes
