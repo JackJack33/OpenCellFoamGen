@@ -1,0 +1,36 @@
+general:
+  fname: foamgen_standard_20ppi
+
+packing:
+  active: true
+  domain: 0.10
+  number_of_cells: 600
+
+tessellation:
+  active: true
+  rve_size: 0.10
+
+structured_mesh:
+  active: true
+  porosity: 0.92
+  strut_content: 0.30
+  nx: 400
+  ny: 400
+  nz: 150
+
+material:
+  name: aluminum_foam_20ppi
+  solid_density: 2700
+  relative_density: 0.08
+  pore_size_mm: 1.27
+  strut_thickness_mm: 0.40
+  foam_density: 216
+
+geometry:
+  width: 0.10
+  height: 0.10
+  core_thickness: 0.015
+
+output:
+  format: vtk
+  filename: foamgen_standard_20ppi.vtk
