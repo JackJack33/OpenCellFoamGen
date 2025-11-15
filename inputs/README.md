@@ -10,18 +10,14 @@ This document provides:
 
 ---
 
-# 1. Foamgen Parameter Definitions
+# Foamgen Parameter Definitions
 
-Below is a clear explanation of *every* YAML key used by Foamgen in its standard configuration.
-
----
-
-## 1.1 `filename`
+## `filename`
 - Base name for all generated files (used for saving packing, tessellation, smesh outputs).
 
 ---
 
-## 1.2 `pack:` (Sphere packing stage)
+## `pack:` (Sphere packing stage)
 Foamgen uses sphere packing as the *seed structure* for generating a porous Voronoi foam.
 
 | Parameter | Meaning | Physical Interpretation |
@@ -41,7 +37,7 @@ Foamgen uses sphere packing as the *seed structure* for generating a porous Voro
 
 ---
 
-## 1.3 `tess:` (Voronoi Tessellation)
+## `tess:` (Voronoi Tessellation)
 Turns packing seeds into foam cells.
 
 | Parameter | Meaning |
@@ -54,7 +50,7 @@ Tessellation has minimal user control; its output depends on `pack`.
 
 ---
 
-## 1.4 `morph:` (Geometry modification)
+## `morph:` (Geometry modification)
 Controls wall/strut thickness at geometry level.
 
 | Parameter | Meaning | Real-World Meaning |
@@ -68,12 +64,12 @@ For aerospace metallic foams:
 
 ---
 
-## 1.5 `umesh:` (Unstructured mesh)
+## `umesh:` (Unstructured mesh)
 We disable this because we are generating a **structured voxel mesh** instead.
 
 ---
 
-## 1.6 `smesh:` (Structured mesh generation)
+## `smesh:` (Structured mesh generation)
 This is the final meshing step.
 
 | Parameter | Meaning | Physical Interpretation |
@@ -90,7 +86,7 @@ This is the final meshing step.
 
 ---
 
-# 2. Aerospace-Validated Foam Parameters
+# Aerospace-Validated Foam Parameters
 
 These values come from:
 - ERG Aerospace **Duocel®** aluminum foam  
@@ -99,7 +95,7 @@ These values come from:
 
 ---
 
-## 2.1 Relative Density & Porosity
+## Relative Density & Porosity
 
 | Relative Density | Porosity | Typical Use |
 |------------------|----------|-------------|
@@ -109,7 +105,7 @@ These values come from:
 
 ---
 
-## 2.2 PPI → Pore Size
+## PPI → Pore Size
 
 $$
 d \approx \frac{25.4\ \text{mm}}{\text{PPI}}
@@ -123,7 +119,7 @@ $$
 
 ---
 
-## 2.3 Strut Thickness (Validated Ranges)
+## Strut Thickness (Validated Ranges)
 
 Based on experimental aluminum foam data:
 - **0.20 mm** for ~2.5 mm pores  
@@ -132,7 +128,7 @@ Based on experimental aluminum foam data:
 
 ---
 
-# 3. Foam Configuration Summary Table
+# Foam Configuration Summary Table
 
 | Config | PPI | Porosity | Relative Density | Strut Thickness | Purpose |
 |--------|-----|----------|------------------|------------------|----------|
@@ -142,7 +138,7 @@ Based on experimental aluminum foam data:
 
 ---
 
-# 4. YAML Files Summary
+# YAML Files Summary
 
 1. **foamgen_low_density_10ppi.yml**  
    - Large ~2.5 mm pores  
@@ -161,10 +157,60 @@ Based on experimental aluminum foam data:
 
 ---
 
-# 5. Next Steps
+# Next Steps
 After generating the foam core:
 1. Import into **SolidWorks**  
 2. Extrude **1.0 mm aluminum skins** for sandwich panels  
 3. Run thermal + structural simulation  
 4. Iterate (change porosity or PPI as needed)  
+
+---
+
+# Sources / References
+
+This section lists key external sources used to justify the parameter ranges and modeling assumptions.
+
+- **Duocel® Aluminum Foam – Cell Structure & Specification**  
+  PPI options (5, 10, 20, 40), relative density range (4–12%), and general foam specification.  
+  <https://ergaerospace.com/aluminum-foam-cell-structure-material/>  
+
+- **Duocel® Foam Density & Porosity Definition**  
+  Relationship between relative density and porosity (porosity = 1 − RD).  
+  <https://ergaerospace.com/duocel-foam-density/>  
+
+- **Duocel® Made-to-Order Aluminum Foam Panel Configurator**  
+  PPI options and relative density ranges used for real panels.  
+  <https://duocelfoam.com/product/made-to-order-aluminum-foam-panel/>  
+
+- **Open-Cell Aluminum Foams – Pore Size & Wall Thickness (MDPI Metals, 2024)**  
+  J. Kim et al., “Mechanical Properties and Deformation Behavior of Open-Cell-Type Aluminum Foams Manufactured by Replication-Casting Process.”  
+  (pore size ranges 0.7–1.0, 1.0–2.0, 2.8–3.4 mm and corresponding wall thickness 0.22, 0.88, 1.76 mm).  
+  <https://www.mdpi.com/2075-4701/14/8/877>  
+
+- **Heat Dissipation of Open-Cell-Type Aluminum Foams (Replication Casting)**  
+  Additional data for pore size and porosity ranges for open-cell Al foams.  
+  <https://www.mdpi.com/2075-4701/14/2/206>  
+
+- **Gibson & Ashby – Cellular Solids: Structure and Properties**  
+  Classic reference for scaling of mechanical properties with relative density and t/ℓ ratios.  
+  Book overview: <https://books.google.com/books/about/Cellular_Solids.html?id=IySUr5sn4N8C>  
+
+- **Scaling of Properties in Cellular Solids (Gibson–Ashby paper)**  
+  Relations between relative density, strut geometry, and stiffness/strength.  
+  <https://www.researchgate.net/publication/229944370_Cellular_Solids_-_Scaling_of_Properties>  
+
+- **Aluminum Foam Core Sandwich Panels – Face Sheet Thickness Examples**  
+  Example commercial aluminum foam-core panels with aluminum skin thickness 0.7–1.0 mm.  
+  <https://www.kingmets.com/aluminium-foam-core-sandwich-panel.html>  
+
+- **Aluminum / Honeycomb / PET Foam Sandwich Panels – Face Sheet Thickness Ranges**  
+  Typical face sheet thickness ranges (0.5–1.0+ mm) for aluminum-faced sandwich panels.  
+  <https://www.gteek.com/PET-Foam-Sandwich-Panels-1>  
+  <https://www.hwhoneycomb-panels.com/honey-comb-panels/aluminum-honeycomb-panels/25mm-aluminium-honeycomb-sandwich-panels-for.html>  
+
+These references are not exhaustive but are sufficient to justify the chosen ranges for:
+- Relative density (4–12%)  
+- PPI and corresponding pore sizes  
+- Wall/strut thickness ranges  
+- Typical panel and face-sheet thicknesses for sandwich structures.
 
