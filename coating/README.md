@@ -144,6 +144,7 @@ If we take a **relative density $\bar\rho \sim 0.1$** (10%) and Gibson–Ashby s
   $$
   \sigma_{y,\text{foam}} \sim 0.3 \times 300\ \text{MPa} \times (0.1)^{3/2} \approx 2.8\ \text{MPa}
   $$
+  
   This sits right in the **few-MPa range** observed for both Al foams and Ni foams at similar densities.   
 
 - For thermal conductivity, taking $k_\text{strut} \sim 140\ \text{W/m·K}$ and $\bar\rho \sim 0.1$, a simple linear scaling gives:
