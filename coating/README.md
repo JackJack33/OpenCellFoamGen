@@ -89,13 +89,13 @@ This is qualitatively consistent with our assumption that a **30%-of-strut-thick
 The classic **Gibson–Ashby** models for cellular solids give (for open-cell foams):
 
 - Elastic modulus scaling:
-  $$
+$$
   \frac{E_\text{foam}}{E_s} \approx C_E \left( \frac{\rho_\text{foam}}{\rho_s} \right)^2
-  $$
+$$
 - Yield (or plateau) strength scaling:
-  $$
+$$
   \frac{\sigma_{y,\text{foam}}}{\sigma_{y,s}} \approx C_\sigma \left( \frac{\rho_\text{foam}}{\rho_s} \right)^{3/2}
-  $$
+$$
 where $E_s, \sigma_{y,s}, \rho_s$ are the properties of the **solid** material, and $C_E, C_\sigma$ are constants typically of order 0.1–1 for metallic open-cell foams.   
 
 This framework is widely used in cellular-solids design and appears in:
@@ -133,9 +133,9 @@ If we take a **relative density $\bar\rho \sim 0.1$** (10%) and Gibson–Ashby s
 
 - $E_\text{foam} \sim C_E\, E_\text{strut}\,\bar\rho^2$.  
   With $C_E \sim 1$ and $E_\text{strut} \sim 130\ \text{GPa}$, we get:
-  $$
+$$
   E_\text{foam} \sim 130\ \text{GPa} \times (0.1)^2 \approx 1.3\ \text{GPa}
-  $$
+$$
   This is slightly higher than the **0.05–0.1 GPa** reported for **uncoated Al foam at ~8% density**, which makes sense because:
   - We are at a slightly higher density (10% vs 8%), and  
   - The struts are Ni-reinforced, so the “solid” is stiffer than bare Al.   
@@ -149,9 +149,10 @@ $$
   This sits right in the **few-MPa range** observed for both Al foams and Ni foams at similar densities.   
 
 - For thermal conductivity, taking $k_\text{strut} \sim 140\ \text{W/m·K}$ and $\bar\rho \sim 0.1$, a simple linear scaling gives:
-  $$
+
+$$
   k_\text{foam} \sim C_k\,k_\text{strut}\,\bar\rho \approx (1)\times 140\times 0.1 \approx 14\ \text{W/m·K}
-  $$
+$$
   This falls nicely into the **10 W/m·K range** that cooling-system notes and experiments suggest for ~10–15% density Al foams, and using Ni-reinforced struts is plausibly on the higher side of that band.   
 
 So the **working values** we proposed—
