@@ -1,7 +1,6 @@
 # Ni-Coated Aluminum Foam – Property Assumptions and Supporting Literature
 
 This document compiles **representative literature values** to justify the **first-pass simulation parameters** we are using for Ni-coated aluminum open-cell foams.  
-Because properties depend strongly on alloy, porosity, PPI, and coating thickness, we use cautious language such as *“literature suggests”* and *“it appears that”*.
 
 ---
 
