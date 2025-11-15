@@ -149,11 +149,11 @@ $$
   This sits right in the **few-MPa range** observed for both Al foams and Ni foams at similar densities.   
 
 - For thermal conductivity, taking $k_\text{strut} \sim 140\ \text{W/m·K}$ and $\bar\rho \sim 0.1$, a simple linear scaling gives:
-
+<br>
 $$
   k_\text{foam} \sim C_k\,k_\text{strut}\,\bar\rho \approx (1)\times 140\times 0.1 \approx 14\ \text{W/m·K}
 $$
-
+<br>
   This falls nicely into the **10 W/m·K range** that cooling-system notes and experiments suggest for ~10–15% density Al foams, and using Ni-reinforced struts is plausibly on the higher side of that band.   
 
 So the **working values** we proposed—
